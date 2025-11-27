@@ -1,11 +1,17 @@
 name: Build EA7500
 
 on: 
+  release:
+    types: [published]
   push:
-    branches:
-    - "*"
-  workflow_dispatch:
-
+    tags:
+    - 'v*'
+  #  branches: 
+  #    - master
+#  schedule:
+#    - cron: 0 8 * * 5
+  watch:
+    types: [started]
 jobs:
   build:
     runs-on: ubuntu-20.04
