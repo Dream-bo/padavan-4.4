@@ -2,10 +2,11 @@ name: build EA7500
 
 on: 
   push:
-    branches:
-    - "*"
+  pull_request:
   workflow_dispatch:
-
+  release:
+    types: [published]
+    
 jobs:
   build:
     name: build
